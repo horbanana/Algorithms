@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <p id="var"></p>
+<script>
+//print 1-255
+
+function printNum(){
+    var i;
+  
+    for(i = 1; i <= 255; i++){
+
+      console.log(i);
+      // document.write(i + "<br>"); // display on the page in new line
+      // window.alert(i); //popup window
+    }
+  }
+  // printNum();
+
+//print Odds 1 -255
+
+function printOdds(){
+  var i;
+
+  for( i = 1; i <= 255; i++){
+    if(i%2 != 0){
+      document.write(i + " ");
+    }
+  }
+}
+
+//or
+
+function printOdds(){
+  var num =1;
+  while (num <= 255){
+    console.log(num);
+    num = num + 2;
+  }
+}
+// printOdds()
+
+//print Ints Sum 0 - 255
+function sumInts(){
+  var i;
+  var sum = 0;
+  for( i = 0; i <= 255; i++){
+    sum = sum + i;
+    console.log(i, sum)
+  }
+  document.write(sum);
+}
+
+// sumInts()
+
+//print Array Values (iterate through a given array, printing each value)
+function printArrayVal(arr){
+  var i;
+  for( i = 0; i < arr.length; i++){
+    document.write(arr[i]);
+  }
+}
+// printArrayVal([1,3,4,5,2,8,0,1])
+
+
+//Print Max of Array
+function arrMax(arr){
+  var i;
+  var max = arr[0];
+  if(arr.length === 0){
+    window.alert("Empty array!")
+  }
+  for(i = 0; i < arr.length; i++){
+    if(max < arr[i]){
+      max = arr[i];
+    }
+  }
+  document.write(max);
+}
+//arrMax([])
+// arrMax([1,0, -3, 456, 7, 890112, 6])
+
+//print Avarage of Array
+function printAvg(arr){
+  var avg;
+  var i;
+  var sum = arr[0];
+  for( i = 0; i <= arr.length; i++){
+    sum = sum + i;
+    console.log(i, sum)
+  }
+  avg = sum  / arr.length;
+  document.write(avg);
+}
+// printAvg([1,2,3])
+
+
+//Create an array with all the odd integers between 1 and 255
+function returnOddsArray(){
+  var arr = [];
+  var i;
+
+  for( i = 1; i <= 255; i+2){
+      arr.push(i);
+  }
+  document.write("[" + arr + "]");
+  return arr;
+}
+// returnOddsArray()
+
+//square array values
+function squareArr(arr){
+  for(var i = 0; i < arr.length; i++){
+    // arr[i] = arr[i] * arr[i];
+    arr[i] = Math.pow(arr[i], 2);;
+  }
+  document.write(arr);
+  return arr;
+}
+// squareArr([-5,1,7,-9]);
+
+
+
+// return array count greater than Y (given an array and a value Y, count and print the num of array values grater than Y)
+
+function graterThanY(arr, Y){
+  var counter = 0;
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] > Y){
+      counter++;
+    }
+  }
+  document.write(counter);
+  return counter;
+}
+// graterThanY([1,2,3,4,5,6,7,8], 5)
+
+//return the given array, after setting any negative values to zero
+function negNumToZero(arr){
+  for(var i =0; i < arr.length; i++){
+    if(arr[i] < 0){
+      arr[i] = 0;
+    }
+  }
+  document.write(arr);
+  return arr;
+}
+// negNumToZero([0,2,-3,-8,-9])
+
+//Print Max,Min and Avg array values
+
+function maxMinAvg(arr){
+  var sum = 0;
+  var max = arr[0];
+  var min = arr[0];
+  var avg;
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] > max){
+      max = arr[i];
+    }
+    if(arr[i]< min){
+      min = arr[i]
+    }
+    sum = sum + arr[i];
+  }
+  avg = sum / arr.length
+  document.write("Max is:" + max + ", Min:" + min + ", Average is: " + avg)
+}
+
+// maxMinAvg([1,2,3,4,5,6,7])
+
+//Shift Array Values Left(Given an array, move all values forward (to the left) by one index, dropping the first value and leaving a 0 value at the end of the array)
+function shiftArr(arr){
+  var i = 0;
+  while(i< arr.length - 1){
+    arr[i] = arr[i+1]
+    i++
+  }
+  arr[i] = 0;
+  document.write(arr)
+}
+// shiftArr([1,2,3,4,5,6])
+
+//Swap String for Array Negative Values ( Given an array of numbers, replace any negative values with string 'Hakuna Matata') 
+function swapNeg(arr){
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] < 0){
+      arr[i] = "Hakuna Matata";
+    }
+  }
+  document.write(arr)
+}
+// swapNeg([1,2,3,-4,-5,9,0,-2])
+
+// SIGMA (returns the sum of all positive integers up to number(inclusive))
+
+function sigma(num){
+  var sigmaNum = 0;
+  if(num < 1){
+    window.alert("Number have to be greater than 1")
+    return;
+  }
+  for(var i = 1; i <= num; i++){
+      sigmaNum = sigmaNum + i;
+  }
+
+  //or
+
+  while(num > 0){
+    sigmaNum += num;
+    num--;
+  }
+    
+  
+  document.write(sigmaNum);
+  return sigmaNum;
+}
+// sigma(2);
+
+//FACTORIAL (returns the product(multiplication) of all positive integers up to number(inclusive))
+
+function factorial(num){
+var factorialNum = 1;
+while(num >= 1){
+  factorialNum = factorialNum * num;
+    num--;
+  }
+    
+  
+  document.write(factorialNum);
+  return factorialNum;
+}
+// factorial(6);
+
+//Trees and Fives (create threesFives() that adds values from 100 and 4000000 (inclusive) if that value is evenly divisible by 3 or 5 but not both. Display the final sum in the console)
+
+function threesFives(){
+  var sum = 0;
+  for(var i = 100; i <= 4000000; i++){
+    if((i%3 === 0 && i % 5 != 0 || i%3 != 0 && i % 5 === 0)){
+      sum +=i;
+    }
+  }
+  console.log(sum);
+}
+// threesFives()
+
+//GENERATE COIN CHANGE(Accept a number of American cents, compute and print how to represent that amount with smallest number of coins)
+
+function grateCoinChange(cents){
+  var quarters = 0;
+  var dimes = 0;
+  var nickels = 0;
+  var pennies = 0;
+  while (cents >= 25){
+    cents -= 25;
+    quarters+=1
+  }
+  while (cents >= 10){
+    cents -= 10;
+    dimes += 1
+  }
+  while (cents >= 5){
+    cents -= 5;
+    nickels += 1
+  }
+  while (cents >= 1){
+    cents -= 1;
+    pennies += 1
+  }
+
+  document.write("Exact change is: quarters - "+ quarters+ ", dimes - "+ dimes +", nickels - "+ nickels + ", pennies - "+ pennies+".")
+    
+}
+  
+// grateCoinChange(75);
+
+
+//FIBONACCI
+
+function fib(n) {
+
+const result = [0, 1];
+for (var i = 2; i < n; i++) {
+  result.push(result[i-2] + result[i-1]);
+}
+return result; // or result[n-1] if you want to get the nth term
+
+}
+
+console.log(fib(8)); 
+
+</script>

@@ -278,16 +278,25 @@ function grateCoinChange(cents){
 
 //FIBONACCI
 
+//recursive
+function fibRec(n) {
+  return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+
+// console.log(fibRec(8));
+
+//for loop
 function fib(n) {
-
-const result = [0, 1];
-for (var i = 2; i < n; i++) {
-  result.push(result[i-2] + result[i-1]);
+  let a = 1;
+  let b = 1;
+  for (let i = 3; i <= n; i++) {
+    let c = a + b;
+    a = b;
+    b = c;
+  }
+  return b;
 }
-return result; // or result[n-1] if you want to get the nth term
 
-}
-
-console.log(fib(8)); 
+// console.log(fib(8)); 
 
 </script>
